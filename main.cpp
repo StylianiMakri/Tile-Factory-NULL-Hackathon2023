@@ -132,7 +132,7 @@ void rotatePentomino(Pentomino& p) {
 }
 
 
-int main() {
+int main(){
     int rows = 5;
     int cols = 12;
 
@@ -164,15 +164,49 @@ int main() {
         }
     }
 
+
     for(int i =0; i<12; i++){
+        int rotation;
+        cout << "Enter rotation (0,90,180 or 270 degrees): " <<endl;
+        cin >> rotation;
     Pentomino p = pentominos[i];
-        rotatePentomino(p);
-        displayPentomino(p);
-        cout << endl;
+    switch (rotation) {
+        case 0: {
+            displayPentomino(p);
+            cout << endl;
+        }
+        break;
+        case 90: {
+            rotatePentomino(p);
+            displayPentomino(p);
+            cout << endl;
+        }
+        break;
+        case 180:{
+            rotatePentomino(p);
+            rotatePentomino(p);
+            displayPentomino(p);
+            cout << endl;
+        }
+        break;
+        case 270: {
+            rotatePentomino(p);
+            rotatePentomino(p);
+            rotatePentomino(p);
+            displayPentomino(p);
+            cout << endl;
+        }
+        break;
+        default:
+        {
+            cout << "Invalid input" <<endl;
+        }
+        break;
+    };
+    }
+    return 0;
     }
 
 
-    return 0;
-}
 
 
