@@ -154,8 +154,8 @@ int main(){
     //rotation
     for(int i =0; i<12; i++){
         Pentomino p = pentominos[i];
-        int rotation;
-        cout << "Enter rotation for " << p.letter << " (0,90,180 or 270 degrees): " <<endl;
+        char rotation;
+        cout << "Enter rotation for " << p.letter << " (0,90,180 or 270 degrees) or mirrored in X or Y axis: " <<endl;
         cin >> rotation;
     switch (rotation) {
         case 0: {
@@ -184,6 +184,18 @@ int main(){
             cout << endl;
         }
         break;
+        case 'X': {
+            flipPentomino(p,rotation);
+            displayPentomino(p);
+            cout << endl;
+        }
+            break;
+        case 'Y': {
+            flipPentomino(p,rotation);
+            displayPentomino(p);
+            cout << endl;
+        }
+            break;
         default:
         {
             cout << "Invalid input" <<endl;
