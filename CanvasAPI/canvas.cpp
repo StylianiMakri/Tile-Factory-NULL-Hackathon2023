@@ -113,5 +113,7 @@ std::string shapesPositions(char* canvas, int rows, int cols) {
     }
     return result;
 }
-
+char** insertShape(char** canvas, char* shape) {
+    
+}
 
