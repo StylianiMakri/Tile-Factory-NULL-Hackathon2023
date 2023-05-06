@@ -2,8 +2,10 @@
 #include <vector>
 #include <cmath>
 #include "CanvasAPI/canvas.h"
+#include "TileAPI/shapes.h"
 
 using namespace std;
+
 
 // Generate  orthogonal canvas with "holes"
 
@@ -83,45 +85,7 @@ void displayPentomino(const Pentomino& p) {
     }
 }
 
-std::vector<std::vector<std::pair<int, int>>> getAllPositions(const Pentomino& shape, int rows, int cols) {
-    std::vector<std::vector<std::pair<int, int>>> positions;
 
-    for (int i = 0; i <= rows - 5; i++) {
-        for (int j = 0; j <= cols - 5; j++) {
-            std::vector<std::pair<int, int>> current_position;
-            bool valid_position = true;
-            for (const auto& coord : shape.coords) {
-                int row = i + coord.first;
-                int col = j + coord.second;
-                if (row >= rows || col >= cols) {
-                    valid_position = false;
-                    break;
-                }
-                current_position.emplace_back(row, col);
-            }
-            if (valid_position) {
-                positions.push_back(current_position);
-            }
-        }
-    }
-
-    return positions;
-}
-void rotatePentomino(Pentomino& p) {
-    for (auto& coord : p.coords) {
-        int i = coord.first;
-        int j = coord.second;
-        int n =5; // number of rows/columns in the 4x4 grid
-        int k = j;
-        int l = n - i - 1;
-        coord = make_pair(k, l);
-    }
-}
-
-bool isPositionAvailable(auto canvas, int row, int col) {
-    // check if the given position is available (i.e., contains a 0)
-    return canvas[row][col] == 0;
-}
 
 bool canShapeFit(auto canvas, Pentomino shape, int row, int col) {
     // check if the shape can fit starting at the given position
