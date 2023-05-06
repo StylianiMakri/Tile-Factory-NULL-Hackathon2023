@@ -17,5 +17,6 @@ void initZ(char* Z);
 
 int* rotateShape(int* shape,int degrees, int* rotatedShape);
 int* flipShape(int* shape,int axis, int* flippedShape);
+void displayShape(int* rotatedshape);
 
 #endif //TILEFACTORY_SHAPES_H

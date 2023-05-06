@@ -8,3 +8,8 @@
 0	20	0	clean	5dfe39745543acdd
 5	1054	7050923036730522	CMakeFiles/TileFactory.dir/CanvasAPI/canvas.cpp.obj	87e48461629f1bac
 1055	1234	7050923038481529	TileFactory.exe	aeb42e2fc3691432
+26	1863	7050967500801888	CMakeFiles/TileFactory.dir/CanvasAPI/canvas.cpp.obj	87e48461629f1bac
+18	1866	7050967500861901	CMakeFiles/TileFactory.dir/stabilityAPI/stability.cpp.obj	853266f7e29cdbd4
+14	924	7050968162096241	CMakeFiles/TileFactory.dir/TileAPI/shapes.cpp.obj	59e6395308d25e10
+5	11455	7050978426551284	CMakeFiles/TileFactory.dir/main.cpp.obj	d87932e71c63dbca
+11456	12773	7050978439657969	TileFactory.exe	aeb42e2fc3691432
