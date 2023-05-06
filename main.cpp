@@ -23,6 +23,7 @@ int main() {
     initCanvas(canvas, rows, cols, num_holes);
     displayCanvas(canvas, rows, cols);
 
+
     return 0;
 }
 
