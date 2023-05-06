@@ -455,5 +455,13 @@ int* flipShape(int* shape,int axis, int* flippedShape) {
     return flippedShape;
 }
 
+void displayShape(int* rotatedShape){
+    for (int i = 0; i < 5; i++) {
+        for (int j = 0; j < 5; j++) {
+            printf("%d",rotatedShape[i*5+j]);
+        }
+    }
+}
+
 
 
