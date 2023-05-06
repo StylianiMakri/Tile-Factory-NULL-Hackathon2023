@@ -131,6 +131,39 @@ void rotatePentomino(Pentomino& p) {
     }
 }
 
+bool isPositionAvailable(auto canvas, int row, int col) {
+    // check if the given position is available (i.e., contains a 0)
+    return canvas[row][col] == 0;
+}
+
+bool canShapeFit(auto canvas, Pentomino shape, int row, int col) {
+    // check if the shape can fit starting at the given position
+    for (auto& coord : shape.coords) {
+        int r = coord.first + row;
+        int c = coord.second + col;
+        if (r < 0 || r >= canvas.size() || c < 0 || c >= canvas[0].size() || !isPositionAvailable(canvas, r, c)) {
+            return false;
+        }
+    }
+    return true;
+}
+
+void addShapeToCanvas(auto &canvas, Pentomino shape) {
+    // try to fit the shape at each position in the canvas
+    for (int row = 0; row < canvas.size(); row++) {
+        for (int col = 0; col < canvas[0].size(); col++) {
+            if (canShapeFit(canvas, shape, row, col)) {
+                // shape can fit at this position, so add it to the canvas
+                for (auto &coord: shape.coords) {
+                    int r = coord.first + row;
+                    int c = coord.second + col;
+                    canvas[r][c] = shape.letter;
+                }
+                return;
+            }
+        }
+    }
+}
 
 int main(){
     int rows = 5;
