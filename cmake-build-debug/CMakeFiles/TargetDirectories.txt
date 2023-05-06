@@ -1,0 +1,3 @@
+C:/Users/stell/Desktop/HACKATHON 2023/TileFactory/cmake-build-debug/CMakeFiles/TileFactory.dir
+C:/Users/stell/Desktop/HACKATHON 2023/TileFactory/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/stell/Desktop/HACKATHON 2023/TileFactory/cmake-build-debug/CMakeFiles/rebuild_cache.dir
