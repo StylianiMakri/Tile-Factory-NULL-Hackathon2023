@@ -3,8 +3,11 @@
 #include <cstdio>
 #include <cstdlib>
 #include <ctime>
+#include <vector>
 
+using namespace std;
 
+vector<std::vector<bool>> generateCanvas(int rows, int cols, vector<pair<int, int>> holes);
 char* generateCanvas(char* canvas);
 char** createCanvas(int rows,int cols);
 void displayCanvas(char** canvas, int rows, int cols);

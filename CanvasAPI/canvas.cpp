@@ -7,14 +7,21 @@
 
 
 
-char* generateCanvas(char* canvas){
-    //createCanvas(canvas,5,12);
-  //  initCanvas(canvas,5,12,2);
+vector<vector<bool>> generateCanvas(int rows, int cols, vector<pair<int, int>> holes) {
+    // Initialize canvas with all white cells
+    vector<vector<bool>> canvas(rows, vector<bool>(cols, false));
+
+    // Mark black cells
+    for (auto hole : holes) {
+        int row = hole.first;
+        int col = hole.second;
+        if (row >= 0 && row < rows && col >= 0 && col < cols) {
+            canvas[row][col] = true;
+        }
+    }
 
     return canvas;
-
 }
-
 
 char** createCanvas(int rows, int cols) {
     char** canvas = new char*[rows];

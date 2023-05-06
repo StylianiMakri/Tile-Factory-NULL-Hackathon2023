@@ -1,25 +1,12 @@
 #include <iostream>
 #include <vector>
 #include <cmath>
+#include "CanvasAPI/canvas.h"
 
 using namespace std;
 
 // Generate  orthogonal canvas with "holes"
-vector<vector<bool>> generateCanvas(int rows, int cols, vector<pair<int, int>> holes) {
-    // Initialize canvas with all white cells
-    vector<vector<bool>> canvas(rows, vector<bool>(cols, false));
 
-    // Mark black cells
-    for (auto hole : holes) {
-        int row = hole.first;
-        int col = hole.second;
-        if (row >= 0 && row < rows && col >= 0 && col < cols) {
-            canvas[row][col] = true;
-        }
-    }
-
-    return canvas;
-}
 void printCavas(auto canvas, int rows, int cols){
 
     for (int i = 0; i < rows; i++) {
@@ -169,6 +156,7 @@ int main(){
     int rows = 5;
     int cols = 12;
 
+    //initialize canva and pentomino shapes
     vector<pair<int, int>> holes = {{2, 3}, {2, 8}}; // (row, col) pairs of black cells
     auto canvas = generateCanvas(rows, cols, holes);
     auto pentominos = generatePentominos();
@@ -177,6 +165,7 @@ int main(){
     cout << "Canvas: ";
     printCavas(canvas,rows,cols);
 
+    //print pentonimo shapes
     cout << "Letters: ";
     for (auto p : pentominos) {
         cout << p.letter << ':' << endl;
@@ -184,6 +173,7 @@ int main(){
         cout << endl;
     }
 
+    //print all possible position for all shapes (no rotate)
     for(int i=0; i<12; i++){
         Pentomino shape = pentominos[i];
         std::vector<std::vector<std::pair<int, int>>> positions = getAllPositions(shape, rows, cols);
@@ -197,12 +187,12 @@ int main(){
         }
     }
 
-
+    //rotation
     for(int i =0; i<12; i++){
+        Pentomino p = pentominos[i];
         int rotation;
-        cout << "Enter rotation (0,90,180 or 270 degrees): " <<endl;
+        cout << "Enter rotation for " << p.letter << " (0,90,180 or 270 degrees): " <<endl;
         cin >> rotation;
-    Pentomino p = pentominos[i];
     switch (rotation) {
         case 0: {
             displayPentomino(p);
@@ -237,6 +227,11 @@ int main(){
         break;
     };
     }
+
+
+
+    addShapeToCanvas(canvas, pentominos[0]);
+    printCavas(canvas,rows,cols);
     return 0;
     }
 
