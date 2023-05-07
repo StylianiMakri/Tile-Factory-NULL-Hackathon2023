@@ -2,6 +2,7 @@
 
 
 ## About
+This is NULL's team effort in Hackathon 2023. We tried!
 
 ## Requirements
 
@@ -12,6 +13,10 @@
 ## Live demo
 
 ## Team
+Ευάγγελος Κομνής
+Μακρή Στυλιανή
+Μπαρμπίδης Αθανάσιος
+Κουκλίδης Γεώργιος
 
 ## License
 
