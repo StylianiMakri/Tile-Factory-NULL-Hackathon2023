@@ -1,22 +1,19 @@
 #ifndef TILEFACTORY_SHAPES_H
 #define TILEFACTORY_SHAPES_H
+#include <vector>
+using namespace std;
 
-void generateShapes(char *F,char *I,char *L,char *N,char *P,char *T,char*U,char*V,char*W,char*X,char*Y,char*Z);
-void initF(char* F);
-void initI(char* I);
-void initL(char* L);
-void initN(char* N);
-void initP(char* P);
-void initT(char* T);
-void initU(char* U);
-void initV(char* V);
-void initW(char* W);
-void initX(char* X);
-void initY(char* Y);
-void initZ(char* Z);
+struct Pentomino {
+    char letter;
+    vector<pair<int, int>> coords; // List of (row, col) coordinates
+};
 
-int* rotateShape(int* shape,int degrees, int* rotatedShape);
+vector<Pentomino> generatePentominos();
+void displayPentomino(const Pentomino& p);
+
+void rotatePentomino(Pentomino& p);
 int* flipShape(int* shape,int axis, int* flippedShape);
 void displayShape(int* rotatedshape);
+void flipPentomino(Pentomino& p, char rotation);
 
 #endif //TILEFACTORY_SHAPES_H
