@@ -7,6 +7,7 @@ This is NULL's team effort in Hackathon 2023. We tried!
 ## Requirements
 
 ## Install
+Click the Run button from your software.
 
 ## Usage
 
