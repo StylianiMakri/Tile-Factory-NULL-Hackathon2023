@@ -20,12 +20,18 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cdb7e3d8-8b43-4c28-afa9-eff07d288dbf" name="Changes" comment="commit" />
-    <list id="12ba9f8b-2803-48ed-b5fa-018f11d3fbb2" name="Changes by Bibos" comment="" />
-    <list id="dd69d3f5-93ef-4016-8c06-3048b2fe820b" name="Changes by gkouk" comment="" />
-    <list id="95ceba3d-05fd-44fd-9895-c8ea9429fe07" name="Changes by Vagge" comment="Changes by Vagge">
+    <list default="true" id="cdb7e3d8-8b43-4c28-afa9-eff07d288dbf" name="Changes" comment="commit &gt;">
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stabilityAPI/stability.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/stabilityAPI/stability.h" beforeDir="false" />
+    </list>
+    <list id="a2b8f85c-f552-4d4a-b471-abc527c62637" name="Changes by gkouk" comment="" />
+    <list id="782149a1-d4d3-406d-9940-6ba5c104add4" name="Changes by Vagge" comment="Changes by Vagge">
       <change beforePath="$PROJECT_DIR$/CanvasAPI/canvas.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/CanvasAPI/canvas.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CanvasAPI/canvas.h" beforeDir="false" afterPath="$PROJECT_DIR$/CanvasAPI/canvas.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TileAPI/shapes.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/TileAPI/shapes.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TileAPI/shapes.h" beforeDir="false" afterPath="$PROJECT_DIR$/TileAPI/shapes.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,7 +111,7 @@
       <updated>1683354044987</updated>
       <workItem from="1683354048153" duration="17565000" />
       <workItem from="1683375666758" duration="280000" />
-      <workItem from="1683376194832" duration="15925000" />
+      <workItem from="1683376194832" duration="43753000" />
     </task>
     <task id="LOCAL-00001" summary="1st commit">
       <created>1683390468912</created>
@@ -135,7 +141,70 @@
       <option name="project" value="LOCAL" />
       <updated>1683396325965</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Changes by Vagge">
+      <created>1683396863788</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1683396863788</updated>
+    </task>
+    <task id="LOCAL-00006" summary="commit rotate">
+      <created>1683405103215</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1683405103215</updated>
+    </task>
+    <task id="LOCAL-00007" summary="commit rotate2">
+      <created>1683407089880</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1683407089880</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Changes by Vagge">
+      <created>1683407150737</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1683407150737</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Changes by Vagge">
+      <created>1683408777216</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1683408777216</updated>
+    </task>
+    <task id="LOCAL-00010" summary="commit 2am">
+      <created>1683412293702</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1683412293702</updated>
+    </task>
+    <task id="LOCAL-00011" summary="commit FLIPPER">
+      <created>1683414786016</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1683414786016</updated>
+    </task>
+    <task id="LOCAL-00012" summary="commit &gt;">
+      <created>1683427584010</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1683427584010</updated>
+    </task>
+    <task id="LOCAL-00013" summary="commit &gt;">
+      <created>1683431126304</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1683431126304</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -147,10 +216,26 @@
     <isAutomaticFoundErrors value="true" />
     <isAutomaticFoundErrors value="true" />
   </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+        <option value="Space.CommitStatus" />
+      </list>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="1st commit" />
-    <MESSAGE value="Changes by Vagge" />
     <MESSAGE value="commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit" />
+    <MESSAGE value="commit rotate" />
+    <MESSAGE value="commit rotate2" />
+    <MESSAGE value="Changes by Vagge" />
+    <MESSAGE value="commit 2am" />
+    <MESSAGE value="commit FLIPPER" />
+    <MESSAGE value="commit &gt;" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit &gt;" />
   </component>
 </project>
