@@ -1,119 +1,73 @@
 #include "canvas.h"
-#include <cstdio>
-#include <cstdlib>
-#include <ctime>
 #include <iostream>
-#include "../stabilityAPI/stability.h"
 
+using namespace std;
 
+vector<vector<bool>> generateCanvas(int rows, int cols, vector<pair<int, int>> holes) {
+    // Initialize canvas with all white cells
+    vector<vector<bool>> canvas(rows, vector<bool>(cols, false));
 
-char* generateCanvas(char* canvas){
-    //createCanvas(canvas,5,12);
-  //  initCanvas(canvas,5,12,2);
-
-    return canvas;
-
-}
-
-
-char** createCanvas(int rows, int cols) {
-    char** canvas = new char*[rows];
-    for (int i = 0; i < rows; i++) {
-        canvas[i] = new char[cols];
-        for (int j = 0; j < cols; j++) {
-            canvas[i][j] = ' ';
+    // Mark black cells
+    for (auto hole : holes) {
+        int row = hole.first;
+        int col = hole.second;
+        if (row >= 0 && row < rows && col >= 0 && col < cols) {
+            canvas[row][col] = true;
         }
     }
+
     return canvas;
 }
-
 
 
 //display canvas to console
-void displayCanvas(char** canvas, int rows, int cols){
+void displayCanvas(vector<std::vector<bool>> canvas, int rows, int cols){
 
     for (int i = 0; i < rows; i++) {
         for (int j = 0; j < cols; j++) {
-            printf("+---");
-        }
-        printf("+\n");
-        for (int j = 0; j < cols; j++) {
-            printf("| %c ", canvas[i][j] );
-        }
-        printf("|\n");
-    }
-    for (int j = 0; j < cols; j++) {
-        printf("+---");
-    }
-    printf("+\n");
-}
-//Initialize values of a canvas
-void initCanvas(char** canvas, int rows, int cols, int num_holes) {
-    srand(time(NULL));
-    for (int k = 1; k <= num_holes; k++) {
-        int row = rand() % rows;
-        int col = rand() % cols;
-        canvas[row][col] = 'B';
-    }
-}
-
-bool locateShape(int* canvas, int* shape){
-
-    int n = sizeof(canvas);
-    int m = sizeof(shape);
-    if (m > n) {
-        return false;
-    }
-
-    for (int i = 0; i <= n - m; i++) {
-        int j;
-        for (j = 0; j < m; j++) {
-            if (canvas[i + j] != shape[j]) break;
-        }
-        if (j == m) return true;
-    }
-
-    return false;
-}
-
-void countCells(char* canvas, int rows, int cols, int& numEmpty, int& numFilled){
-    numEmpty = 0;
-    numFilled = 0;
-
-    for (int i = 0; i < rows; i++) {
-        for (int j = 0; j < cols; j++) {
-            if (canvas[i * cols + j] == 0) {
-                numEmpty++;
-            } else if (canvas[i * cols + j] != 0) {
-                numFilled++;
-            }
-        }
-    }
-
-}
-
-
-
-std::string shapesPositions(char* canvas, int rows, int cols) {
-    std::string result = "";
-    for (int i = 0; i < rows; i++) {
-        for (int j = 0; j < cols; j++) {
-            char c = canvas[i * cols + j];
-            if (c == -1) {
-                result += "B";
-            } else if (c >= 'A' && c <= 'Z') {
-                result += c;
+            if (canvas[i][j]) {
+                std::cout << "B "; // Hole cell
             } else {
-                result += " ";
+                std::cout << ". "; // Empty cell
             }
         }
-        if (i != rows - 1) {
-            result += " ";
+        std::cout << std::endl;
+    }
+}
+
+bool isPositionAvailable(vector<std::vector<bool> >canvas, int row, int col) {
+    // check if the given position is available (i.e., contains a 0)
+    return canvas[row][col] == 0;
+}
+
+bool canShapeFit(vector<std::vector<bool>> canvas, Pentomino shape, int row, int col) {
+    // check if the shape can fit starting at the given position
+    for (auto& coord : shape.coords) {
+        int r = coord.first + row;
+        int c = coord.second + col;
+        if (r < 0 || r >= canvas.size() || c < 0 || c >= canvas[0].size() || !isPositionAvailable(canvas, r, c)) {
+            return false;
         }
     }
-    return result;
+    return true;
 }
-char** insertShape(char** canvas, char* shape) {
-    
+
+void addShapeToCanvas(vector<std::vector<bool>> &canvas, Pentomino shape) {
+    // try to fit the shape at each position in the canvas
+    for (int row = 0; row < canvas.size(); row++) {
+        for (int col = 0; col < canvas[0].size(); col++) {
+            if (canShapeFit(canvas, shape, row, col)) {
+                // shape can fit at this position, so add it to the canvas
+                for (auto &coord: shape.coords) {
+                    int r = coord.first + row;
+                    int c = coord.second + col;
+                    canvas[r][c] = shape.letter;
+                }
+                return;
+            }
+        }
+    }
 }
+
+
 
